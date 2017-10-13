@@ -1,0 +1,12 @@
+Solver will interpret the cube using twoarrays, one on the cubie level, and one on the facelet level.
+The Cubie array is a 3 dimensional array, the third level of the array denotes each layer, which is numbered 0-2, corresponding to the D, E, and U layers.
+The Facelet array is a 3 dimensional array, the third level of the array denotes each face of the cube, which is numbered 0-5, corresponding to U, D, L, R, F, and B faces.
+Edges and Corners will be handled separately as they do not interact with eachother in the Solve
+Naming convention for cubies will be as follows:
+    Edges:
+        2 letters
+        Order will be: W/Y, B/G, R/O
+    Corners:
+        3 letters
+        Each place will maintain each pair of sides.
+        i.e. [W/Y][B/G][R/O]

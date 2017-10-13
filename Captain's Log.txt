@@ -1,0 +1,8 @@
+9-22-2017: 
+	Initial project planning stage. We considered the merits of using Python or C to run the motors or generate the solve.
+	Upon discovering that the current record holder is a microcontroller company, we decided to change our objective from trying to break the record to using a novel technology to solve the cube.
+	We decided to use Google's TensorFlow API and Machine Learning to solve the cube, as a good introduction for most of us into this new technology.
+9-29-2017:
+	Began researching TensorFlow and Google Compute Engine
+	Setup a VM on google Compute Engine
+	Began putting together parts list
