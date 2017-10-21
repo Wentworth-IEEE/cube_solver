@@ -1,7 +1,11 @@
 Solver will interpret the cube using twoarrays, one on the cubie level, and one on the facelet level.
-The Cubie array is a 3 dimensional array, the third level of the array denotes each layer, which is numbered 0-2, corresponding to the D, E, and U layers.
+The Cubie array is a 3 dimensional array, the third level of the array denotes each layer, which is numbered 0-2, corresponding to the U, E, and D layers.
 The Facelet array is a 3 dimensional array, the third level of the array denotes each face of the cube, which is numbered 0-5, corresponding to U, D, L, R, F, and B faces.
-Edges and Corners will be handled separately as they do not interact with eachother in the Solve
+Cube will be assumed to be in WCA scramble position, white on top, green on front.
+White face is ordered from back to front, with green in front.
+RGBO faces are ordered from top to bottom, with white on top.
+Yellow face is ordered from back to front, after performing a x2 move, putting blue in front and yellow on top.
+'i' (inverse) moves rotate counter-clockwise instead of clockwise.
 Naming convention for cubies will be as follows:
     Edges:
         2 letters
@@ -10,3 +14,4 @@ Naming convention for cubies will be as follows:
         3 letters
         Each place will maintain each pair of sides.
         i.e. [W/Y][B/G][R/O]
+    Centers will be definied with a single letter, even though their position will remain constant. Equator slice "center" will be notated as C for core.
