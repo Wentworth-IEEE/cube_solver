@@ -1,16 +1,11 @@
 import tensorflow as tf
+import pandas as pd
 
 #Defining scrambled state
 faceletScrambled = [[[]]]
 cubieScrambled = [[[]]]
 
 #Defining solved state
-faceletSolved = [[['W', 'W', 'W'], ['W', 'W', 'W'], ['W', 'W', 'W']],
-                 [['Y', 'Y', 'Y'], ['Y', 'Y', 'Y'], ['Y', 'Y', 'Y']],
-                 [['O', 'O', 'O'], ['O', 'O', 'O'], ['O', 'O', 'O']],
-                 [['R', 'R', 'R'], ['R', 'R', 'R'], ['R', 'R', 'R']],
-                 [['G', 'G', 'G'], ['G', 'G', 'G'], ['G', 'G', 'G']],
-                 [['B', 'B', 'B'], ['B', 'B', 'B'], ['B', 'B', 'B']]]
 cubieSolved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
                 [['BO', 'B', 'BR'], ['O', 'C', 'R'], ['GO', 'G', 'GR']],
                 [['YBO', 'YB', 'YBR'], ['YO', 'Y', 'YR'], ['YGO', 'YG', 'YGR']]]
