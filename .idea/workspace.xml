@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IEEECubeRobot.iml" afterPath="$PROJECT_DIR$/.idea/IEEECubeRobot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scramble_recog.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cubeExplorer2Solver.py" afterPath="$PROJECT_DIR$/cubeExplorer2Solver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solverMain.py" afterPath="$PROJECT_DIR$/solverMain.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solver_main.py" afterPath="$PROJECT_DIR$/solver_main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,52 +20,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cubeExplorer2Solver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cubeExplorer2Solver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solverMain.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/solverMain.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="309" column="35" lean-forward="true" selection-start-line="309" selection-start-column="35" selection-end-line="309" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#447#2551#0" expanded="false" />
-                <element signature="e#2597#3442#0" expanded="false" />
-                <element signature="e#3472#4317#0" expanded="false" />
-                <element signature="e#4347#5192#0" expanded="false" />
-                <element signature="e#5221#6066#0" expanded="false" />
-                <element signature="e#6096#6941#0" expanded="false" />
-                <element signature="e#6971#7816#0" expanded="false" />
-                <element signature="e#7845#8690#0" expanded="false" />
-                <element signature="e#8720#9565#0" expanded="false" />
-                <element signature="e#9595#10440#0" expanded="false" />
-                <element signature="e#10469#11314#0" expanded="false" />
-                <element signature="e#11344#12189#0" expanded="false" />
-                <element signature="e#12219#13064#0" expanded="false" />
-                <element signature="e#13093#13938#0" expanded="false" />
-                <element signature="e#13968#14813#0" expanded="false" />
-                <element signature="e#14843#15688#0" expanded="false" />
-                <element signature="e#15717#16562#0" expanded="false" />
-                <element signature="e#16592#17437#0" expanded="false" />
-                <element signature="e#17467#18312#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="training_data.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/training_data.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/solver_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4471">
+              <caret line="263" column="30" lean-forward="true" selection-start-line="263" selection-start-column="30" selection-end-line="263" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ce_to_solver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ce_to_solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scramble_recog.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -85,6 +74,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>'</find>
+      <find>tempFacelet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,6 +87,8 @@
         <option value="$PROJECT_DIR$/cubeExplorer2Solver.py" />
         <option value="D:/OneDrive - Wentworth Institute of Technology/Wentworth Semester 3/Digital Logic/Clock.py" />
         <option value="$PROJECT_DIR$/solverMain.py" />
+        <option value="$PROJECT_DIR$/scramble_recog.py" />
+        <option value="$PROJECT_DIR$/solver_main.py" />
       </list>
     </option>
   </component>
@@ -130,6 +122,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,7 +134,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,8 +239,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -283,27 +276,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Tensorflow/Exersize Files/02/addition final.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arraySetup.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="66" lean-forward="false" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/solverMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="98" column="59" lean-forward="false" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Tensorflow/Exersize Files/02/addition final.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -627,6 +599,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/solverMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="309" column="35" lean-forward="true" selection-start-line="309" selection-start-column="35" selection-end-line="309" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/training_data.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -635,31 +615,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/solverMain.py">
+    <entry file="file://$PROJECT_DIR$/ce_to_solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="309" column="35" lean-forward="true" selection-start-line="309" selection-start-column="35" selection-end-line="309" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scramble_recog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solver_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4471">
+          <caret line="263" column="30" lean-forward="true" selection-start-line="263" selection-start-column="30" selection-end-line="263" selection-end-column="30" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#447#2551#0" expanded="false" />
-            <element signature="e#2597#3442#0" expanded="false" />
-            <element signature="e#3472#4317#0" expanded="false" />
-            <element signature="e#4347#5192#0" expanded="false" />
-            <element signature="e#5221#6066#0" expanded="false" />
-            <element signature="e#6096#6941#0" expanded="false" />
-            <element signature="e#6971#7816#0" expanded="false" />
-            <element signature="e#7845#8690#0" expanded="false" />
-            <element signature="e#8720#9565#0" expanded="false" />
-            <element signature="e#9595#10440#0" expanded="false" />
-            <element signature="e#10469#11314#0" expanded="false" />
-            <element signature="e#11344#12189#0" expanded="false" />
-            <element signature="e#12219#13064#0" expanded="false" />
-            <element signature="e#13093#13938#0" expanded="false" />
-            <element signature="e#13968#14813#0" expanded="false" />
-            <element signature="e#14843#15688#0" expanded="false" />
-            <element signature="e#15717#16562#0" expanded="false" />
-            <element signature="e#16592#17437#0" expanded="false" />
-            <element signature="e#17467#18312#0" expanded="false" />
           </folding>
         </state>
       </provider>
