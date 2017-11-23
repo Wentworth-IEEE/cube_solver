@@ -2,16 +2,16 @@ import tensorflow as tf
 import pandas as pd
 
 #Defining scrambled state
-faceletScrambled = [[[]]]
-cubieScrambled = [[[]]]
+facelet_scrambled = [[[]]]
+cubie_scrambled = [[[]]]
 
 #Defining solved state
-cubieSolved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
+cubie_solved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
                 [['BO', 'B', 'BR'], ['O', 'C', 'R'], ['GO', 'G', 'GR']],
                 [['YBO', 'YB', 'YBR'], ['YO', 'Y', 'YR'], ['YGO', 'YG', 'YGR']]]
 
 #Define cubie array from facelet
-def FacetoCube(facelet):
+def face_to_cube(facelet):
     cubie = [[[(facelet[0][0][0] + facelet[5][0][2] + facelet[2][0][0]), (facelet[0][0][1] + facelet[5][0][1]), (facelet[0][0][2] + facelet[5][0][0] + facelet[3][0][2])],
                 [(facelet[0][1][0] + facelet[2][0][1]), facelet[0][1][1], (facelet[0][1][2] + facelet[3][0][1])],
                 [(facelet[0][2][0] + facelet[4][0][0] + facelet[2][0][2]), (facelet[0][2][1] + facelet[4][0][1]), (facelet[0][2][2] + facelet[4][0][2] + facelet[3][0][0])]],
@@ -41,7 +41,7 @@ def FacetoCube(facelet):
     return cubie
 
 #Move functions
-def UFacelet(facelet):
+def U_facelet(facelet):
     tempFacelet = [[[facelet[0][2][0], facelet[0][1][0], facelet[0][0][0]], [facelet[0][2][1], 0, facelet[0][0][1]],
                     [facelet[0][2][2], facelet[0][1][2], facelet[0][0][2]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -55,7 +55,7 @@ def UFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def UiFacelet(facelet):
+def Ui_facelet(facelet):
     tempFacelet = [[[facelet[0][0][2], facelet[0][1][2], facelet[0][2][2]], [facelet[0][0][1], 0, facelet[0][2][1]],
                     [facelet[0][0][0], facelet[0][1][0], facelet[0][2][2]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -69,7 +69,7 @@ def UiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TUFacelet(facelet):
+def TU_facelet(facelet):
     tempFacelet = [[[facelet[0][2][2], facelet[0][2][1], facelet[0][2][0]], [facelet[0][1][2], 0, facelet[0][1][0]],
                     [facelet[0][0][2], facelet[0][0][1], facelet[0][0][0]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -83,7 +83,7 @@ def TUFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def DFacelet(facelet):
+def D_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [0, 0, 0]],
                    [[facelet[1][2][0], facelet[1][1][0], facelet[1][0][0]], [facelet[1][2][1], 0, facelet[1][0][1]],
                     [facelet[1][2][2], facelet[1][1][2], facelet[1][0][2]]],
@@ -97,7 +97,7 @@ def DFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def DiFacelet(facelet):
+def Di_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [0, 0, 0]],
                    [[facelet[1][0][2], facelet[1][1][2], facelet[1][2][2]], [facelet[1][0][1], 0, facelet[1][2][1]],
                     [facelet[1][0][0], facelet[1][1][0], facelet[1][2][2]]],
@@ -111,7 +111,7 @@ def DiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TDFacelet(facelet):
+def TD_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [0, 0, 0]],
                    [[facelet[1][2][2], facelet[1][2][1], facelet[1][2][0]], [facelet[1][1][2], 0, facelet[1][1][0]],
                     [facelet[1][0][2], facelet[1][0][1], facelet[1][0][0]]],
@@ -125,7 +125,7 @@ def TDFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def LFacelet(facelet):
+def L_facelet(facelet):
     tempFacelet = [[[facelet[5][2][2], 0, 0], [facelet[5][1][2], 0, 0], [facelet[5][0][2], 0, 0]],
                    [[facelet[4][0][0], 0, 0], [facelet[4][1][0], 0, 0], [facelet[4][2][0], 0, 0]],
                    [[facelet[2][0][2], facelet[2][1][2], facelet[2][2][2]], [facelet[2][0][1], 0, facelet[2][2][1]],
@@ -139,7 +139,7 @@ def LFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def LiFacelet(facelet):
+def Li_facelet(facelet):
     tempFacelet = [[[facelet[4][0][0], 0, 0], [facelet[4][1][0], 0, 0], [facelet[4][2][0], 0, 0]],
                    [[facelet[5][2][2], 0, 0], [facelet[5][1][2], 0, 0], [facelet[5][0][2], 0, 0]],
                    [[facelet[2][2][0], facelet[2][1][0], facelet[2][0][0]], [facelet[2][2][1], 0, facelet[2][0][1]],
@@ -153,7 +153,7 @@ def LiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TLFacelet(facelet):
+def TL_facelet(facelet):
     tempFacelet = [[[facelet[1][0][0], 0, 0], [facelet[1][1][0], 0, 0], [facelet[1][2][0], 0, 0]],
                    [[facelet[0][0][0], 0, 0], [facelet[0][1][0], 0, 0], [facelet[0][2][0], 0, 0]],
                    [[facelet[2][2][2], facelet[2][2][1], facelet[2][2][0]], [facelet[2][1][2], 0, facelet[2][1][0]],
@@ -167,7 +167,7 @@ def TLFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def RFacelet(facelet):
+def R_facelet(facelet):
     tempFacelet = [[[0, 0, facelet[4][0][2]], [0, 0, facelet[4][1][2]], [0, 0, facelet[4][2][2]]],
                    [[0, 0, facelet[5][2][0]], [0, 0, facelet[5][1][0]], [0, 0, facelet[5][0][0]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -181,7 +181,7 @@ def RFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def RiFacelet(facelet):
+def Ri_facelet(facelet):
     tempFacelet = [[[0, 0, facelet[5][2][0]], [0, 0, facelet[5][1][0]], [0, 0, facelet[5][0][0]]],
                    [[0, 0, facelet[4][0][2]], [0, 0, facelet[4][1][2]], [0, 0, facelet[4][2][2]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -195,7 +195,7 @@ def RiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TRFacelet(facelet):
+def TR_facelet(facelet):
     tempFacelet = [[[0, 0, facelet[1][0][2]], [0, 0, facelet[1][1][2]], [0, 0, facelet[1][2][2]]],
                    [[0, 0, facelet[0][0][2]], [0, 0, facelet[0][1][2]], [0, 0, facelet[0][2][2]]],
                    [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
@@ -209,7 +209,7 @@ def TRFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def FFacelet(facelet):
+def F_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [facelet[2][2][2], facelet[2][1][2], facelet[2][0][2]]],
                    [[facelet[3][0][0], facelet[3][1][0], facelet[3][2][0]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, facelet[1][0][0]], [0, 0, facelet[1][0][1]], [0, 0, facelet[1][0][2]]],
@@ -223,7 +223,7 @@ def FFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def FiFacelet(facelet):
+def Fi_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [facelet[3][0][0], facelet[3][1][0], facelet[3][2][0]]],
                    [[facelet[2][0][2], facelet[2][1][2], facelet[2][2][2]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, facelet[0][0][2]], [0, 0, facelet[0][1][2]], [0, 0, facelet[0][2][2]]],
@@ -237,7 +237,7 @@ def FiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TFFacelet(facelet):
+def TF_facelet(facelet):
     tempFacelet = [[[0, 0, 0], [0, 0, 0], [facelet[1][0][2], facelet[1][0][1], facelet[1][0][0]]],
                    [[facelet[0][2][2], facelet[0][2][1], facelet[0][2][0]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, facelet[3][2][0]], [0, 0, facelet[3][1][0]], [0, 0, facelet[3][0][0]]],
@@ -251,7 +251,7 @@ def TFFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def BFacelet(facelet):
+def B_facelet(facelet):
     tempFacelet = [[[facelet[3][0][2], facelet[3][1][2], facelet[3][2][2]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, 0], [0, 0, 0], [facelet[2][0][0], facelet[2][1][0], facelet[2][2][0]]],
                    [[facelet[0][0][2], 0, 0], [facelet[0][0][1], 0, 0], [facelet[0][0][0], 0, 0]],
@@ -265,7 +265,7 @@ def BFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def BiFacelet(facelet):
+def Bi_facelet(facelet):
     tempFacelet = [[[facelet[2][2][0], facelet[2][1][0], facelet[2][0][0]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, 0], [0, 0, 0], [facelet[3][2][2], facelet[3][1][2], facelet[3][0][2]]],
                    [[facelet[1][2][0], 0, 0], [facelet[1][2][1], 0, 0], [facelet[1][2][2], 0, 0]],
@@ -279,7 +279,7 @@ def BiFacelet(facelet):
                 if tempFacelet[i][j][k] != 0:
                     facelet[i][j][k] = tempFacelet[i][j][k]
     return facelet
-def TBFacelet(facelet):
+def TB_facelet(facelet):
     tempFacelet = [[[facelet[1][2][2], facelet[1][2][1], facelet[1][2][0]], [0, 0, 0], [0, 0, 0]],
                    [[0, 0, 0], [0, 0, 0], [facelet[0][0][2], facelet[0][0][1], facelet[0][0][0]]],
                    [[facelet[3][2][2], 0, 0], [facelet[3][1][2], 0, 0], [facelet[3][0][2], 0, 0]],
@@ -295,25 +295,25 @@ def TBFacelet(facelet):
     return facelet
 
 #Excecutes a moveset
-def doMoveset(moveset, facelet):
-    move_dict = {'UU' : UFacelet,
-                 'Ui' : UiFacelet,
-                 '2U' : TUFacelet,
-                 'DD' : DFacelet,
-                 'Di' : DiFacelet,
-                 '2D' : TDFacelet,
-                 'LL' : LFacelet,
-                 'Li' : LiFacelet,
-                 '2L' : TLFacelet,
-                 'RR' : RFacelet,
-                 'Ri' : RiFacelet,
-                 '2R' : TRFacelet,
-                 'FF' : FFacelet,
-                 'Fi' : FiFacelet,
-                 '2F' : TFFacelet,
-                 'BB' : BFacelet,
-                 'Bi' : BiFacelet,
-                 '2B' : TBFacelet}
+def do_moveset(moveset, facelet):
+    move_dict = {'UU' : U_facelet,
+                 'Ui' : Ui_facelet,
+                 '2U' : TU_facelet,
+                 'DD' : D_facelet,
+                 'Di' : Di_facelet,
+                 '2D' : TD_facelet,
+                 'LL' : L_facelet,
+                 'Li' : Li_facelet,
+                 '2L' : TL_facelet,
+                 'RR' : R_facelet,
+                 'Ri' : Ri_facelet,
+                 '2R' : TR_facelet,
+                 'FF' : F_facelet,
+                 'Fi' : Fi_facelet,
+                 '2F' : TF_facelet,
+                 'BB' : B_facelet,
+                 'Bi' : Bi_facelet,
+                 '2B' : TB_facelet}
     for i in range(int(len(moveset) / 2)):
         try:
             move_dict[moveset[i*2:(i*2)+2]](facelet)
@@ -321,6 +321,11 @@ def doMoveset(moveset, facelet):
             print('Specified move not found. Possible error in moveset.')
             break
     return facelet
+
+training_data_df = pd.read_csv('training_data.csv', dtype=string)
+
+x_training = training_data_df[['scramble']].values
+y_training = training_data_df[['solution']].values
 
 with tf.Session() as session:
 

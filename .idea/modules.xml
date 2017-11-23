@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/OneDrive - Wentworth Institute of Technology/Wentworth Semester 3/Digital Logic/.idea/Digital Logic.iml" filepath="D:/OneDrive - Wentworth Institute of Technology/Wentworth Semester 3/Digital Logic/.idea/Digital Logic.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Tensorflow/Exersize Files/.idea/Exersize Files.iml" filepath="$PROJECT_DIR$/../../Tensorflow/Exersize Files/.idea/Exersize Files.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/IEEECubeRobot.iml" filepath="$PROJECT_DIR$/.idea/IEEECubeRobot.iml" />
     </modules>

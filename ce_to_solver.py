@@ -28,12 +28,10 @@ while True:
             subStr = scramble_ce[initIndex: initIndex + 2]
             scrambleSolver += move_dict_double[subStr]
             initIndex += 3
-            #print('substr' + str(initIndex) + ": " + subStr)
         elif ((scramble_ce[initIndex: initIndex + 1]) in move_dict_single.keys()):
             subStr = scramble_ce[initIndex: initIndex + 1]
             scrambleSolver += move_dict_single[subStr]
             initIndex += 2
-            #print('substr' + str(initIndex) + ": " + subStr)
         else:
             initIndex += 1
         if(initIndex > len(scramble_ce) - 1):
