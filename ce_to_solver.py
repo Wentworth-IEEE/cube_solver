@@ -2,7 +2,7 @@ while True:
     scramble_ce = input("Enter Cube Explorer scramble: ")
     initIndex = 0
     scrambleSolver = ""
-    if(scramble_ce == 'End'):
+    if(scramble_ce == "End"):
         break
     while True:
         move_dict_single = {"U": "UU",

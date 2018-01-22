@@ -1,9 +1,6 @@
 import tensorflow as tf
 import pandas as pd
-
-#Defining scrambled state
-facelet_scrambled = [[[]]]
-cubie_scrambled = [[[]]]
+import scramble_recog as scramble
 
 #Defining solved state
 cubie_solved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
@@ -24,10 +21,7 @@ def face_to_cube(facelet):
     for i in range(3):
         for j in range(3):
             for k in range(3):
-                UD_facelet = ''
-                FB_facelet = ''
-                LR_facelet = ''
-                C_facelet = ''
+                UD_facelet = FB_facelet = LR_facelet = C_facelet = ''
                 for u in range(len(cubie[i][j][k])):
                     if cubie[i][j][k][u:u+1] == 'W' or cubie[i][j][k][u:u+1] == 'Y':
                         UD_facelet = cubie[i][j][k][u:u+1]
@@ -39,6 +33,10 @@ def face_to_cube(facelet):
                         C_facelet = cubie[i][j][k][u:u+1]
                 cubie[i][j][k] = (UD_facelet + FB_facelet + LR_facelet + C_facelet)
     return cubie
+
+#Defining scrambled state
+facelet_scrambled = scramble.generate()
+cubie_scrambled = face_to_cube(facelet_scrambled)
 
 #Move functions
 def U_facelet(facelet):
@@ -322,6 +320,9 @@ def do_moveset(moveset, facelet):
             break
     return facelet
 
+#Tensorflow
+
+#Import training data
 training_data_df = pd.read_csv('training_data.csv', dtype=string)
 
 x_training = training_data_df[['scramble']].values
