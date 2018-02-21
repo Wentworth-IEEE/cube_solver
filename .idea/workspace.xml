@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Captain's Log.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Parts spreadsheet.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/array_setup.txt" afterPath="$PROJECT_DIR$/array_setup.txt" />
-      <change beforePath="$PROJECT_DIR$/cube_robot/scramble_recog.py" afterPath="$PROJECT_DIR$/cube_robot/scramble_recog.py" />
-      <change beforePath="$PROJECT_DIR$/cube_robot/solver_main.py" afterPath="$PROJECT_DIR$/cube_robot/solver_main.py" />
-    </list>
+    <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
+            <state relative-caret-position="1518">
               <caret line="326" column="12" lean-forward="false" selection-start-line="326" selection-start-column="12" selection-end-line="326" selection-end-column="12" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -58,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
+            <state relative-caret-position="1909">
               <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
               <folding />
             </state>
@@ -276,6 +269,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933193" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -500,9 +494,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1909">
+          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
+        <state relative-caret-position="1518">
           <caret line="326" column="12" lean-forward="false" selection-start-line="326" selection-start-column="12" selection-end-line="326" selection-end-column="12" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -524,14 +526,6 @@
             <element signature="e#16606#17454#0" expanded="false" />
             <element signature="e#17484#18332#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
