@@ -21,7 +21,7 @@
 
 void OpCodeSwitch(unsigned char code)
 {
-switch (code)) {
+switch (code) {
   case RR:
     Right();
     break;
@@ -42,38 +42,38 @@ switch (code)) {
     break;
   case UU:
     Up();
-    break
-    case UI:
+    break;
+  case UI:
     UpInverse();
     break;
-    case U2:
+  case U2:
     DoubleUp();
     break;
-    case DD:
+  case DD:
     Down();
     break;
-    case DI:
+  case DI:
     DownInverse();
     break;
-    case D2:
+  case D2:
     DoubleDown();
     break;
-    case FF:
+  case FF:
     Front();
     break;
-    case FI:
+  case FI:
     FrontInverse();
     break;
-    case F2:
+  case F2:
     DoubleFront();
     break;
-    case BB:
+  case BB:
     Back();
     break;
-    case BI:
+  case BI:
     BackInverse();
     break;
-    case B2:
+  case B2:
     DoubleBack();
     break;
 
