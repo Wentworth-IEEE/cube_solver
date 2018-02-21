@@ -1,23 +1,23 @@
 import tensorflow as tf
 import pandas as pd
-import scramble_recog as scramble
 
 #Defining solved state
 cubie_solved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
                 [['BO', 'B', 'BR'], ['O', 'C', 'R'], ['GO', 'G', 'GR']],
                 [['YBO', 'YB', 'YBR'], ['YO', 'Y', 'YR'], ['YGO', 'YG', 'YGR']]]
 
-#Define cubie array from facelet
+# Define cubie array from facelet
 def face_to_cube(facelet):
     cubie = [[[(facelet[0][0][0] + facelet[5][0][2] + facelet[2][0][0]), (facelet[0][0][1] + facelet[5][0][1]), (facelet[0][0][2] + facelet[5][0][0] + facelet[3][0][2])],
-                [(facelet[0][1][0] + facelet[2][0][1]), facelet[0][1][1], (facelet[0][1][2] + facelet[3][0][1])],
-                [(facelet[0][2][0] + facelet[4][0][0] + facelet[2][0][2]), (facelet[0][2][1] + facelet[4][0][1]), (facelet[0][2][2] + facelet[4][0][2] + facelet[3][0][0])]],
-                [[(facelet[5][1][2] + facelet[2][1][0]), facelet[5][1][1], (facelet[5][1][0] + facelet[3][1][2])],
-                [facelet[2][1][1], 'C', facelet[3][1][1]],
-                [(facelet[4][1][0] + facelet[2][1][2]), facelet[4][1][1], (facelet[4][1][2] + facelet[3][1][0])]],
-                [[(facelet[1][2][0] + facelet[5][2][2] + facelet[2][2][0]), (facelet[1][2][1] + facelet[5][2][1]), (facelet[1][2][2] + facelet[5][2][0] + facelet[3][2][2])],
-                [(facelet[1][1][0] + facelet[2][2][1]), facelet[1][1][1], (facelet[1][1][2] + facelet[3][2][1])],
-                [(facelet[1][0][0] + facelet[4][2][0] + facelet[2][2][2]), (facelet[1][0][1] + facelet[4][2][1]), (facelet[1][0][2] + facelet[4][2][2] + facelet[3][2][0])]]]
+            [(facelet[0][1][0] + facelet[2][0][1]), facelet[0][1][1], (facelet[0][1][2] + facelet[3][0][1])],
+            [(facelet[0][2][0] + facelet[4][0][0] + facelet[2][0][2]), (facelet[0][2][1] + facelet[4][0][1]), (facelet[0][2][2] + facelet[4][0][2] + facelet[3][0][0])]],
+            [[(facelet[5][1][2] + facelet[2][1][0]), facelet[5][1][1], (facelet[5][1][0] + facelet[3][1][2])],
+            [facelet[2][1][1], 'C', facelet[3][1][1]],
+            [(facelet[4][1][0] + facelet[2][1][2]), facelet[4][1][1], (facelet[4][1][2] + facelet[3][1][0])]],
+            [[(facelet[1][2][0] + facelet[5][2][2] + facelet[2][2][0]), (facelet[1][2][1] + facelet[5][2][1]), (facelet[1][2][2] + facelet[5][2][0] + facelet[3][2][2])],
+            [(facelet[1][1][0] + facelet[2][2][1]), facelet[1][1][1], (facelet[1][1][2] + facelet[3][2][1])],
+            [(facelet[1][0][0] + facelet[4][2][0] + facelet[2][2][2]), (facelet[1][0][1] + facelet[4][2][1]), (facelet[1][0][2] + facelet[4][2][2] + facelet[3][2][0])]]]
+
     for i in range(3):
         for j in range(3):
             for k in range(3):
@@ -32,9 +32,11 @@ def face_to_cube(facelet):
                     elif cubie[i][j][k][u:u+1] == 'C':
                         C_facelet = cubie[i][j][k][u:u+1]
                 cubie[i][j][k] = (UD_facelet + FB_facelet + LR_facelet + C_facelet)
+
     return cubie
 
-#Defining scrambled state
+
+# Defining scrambled state
 facelet_scrambled = scramble.generate()
 cubie_scrambled = face_to_cube(facelet_scrambled)
 
@@ -292,26 +294,27 @@ def TB_facelet(facelet):
                     facelet[i][j][k] = temp_facelet[i][j][k]
     return facelet
 
-#Excecutes a moveset
+
+# Excecutes a moveset
 def do_moveset(moveset, facelet):
-    move_dict = {'UU' : U_facelet,
-                 'Ui' : Ui_facelet,
-                 '2U' : TU_facelet,
-                 'DD' : D_facelet,
-                 'Di' : Di_facelet,
-                 '2D' : TD_facelet,
-                 'LL' : L_facelet,
-                 'Li' : Li_facelet,
-                 '2L' : TL_facelet,
-                 'RR' : R_facelet,
-                 'Ri' : Ri_facelet,
-                 '2R' : TR_facelet,
-                 'FF' : F_facelet,
-                 'Fi' : Fi_facelet,
-                 '2F' : TF_facelet,
-                 'BB' : B_facelet,
-                 'Bi' : Bi_facelet,
-                 '2B' : TB_facelet}
+    move_dict = {'UU': U_facelet,
+                 'Ui': Ui_facelet,
+                 '2U': TU_facelet,
+                 'DD': D_facelet,
+                 'Di': Di_facelet,
+                 '2D': TD_facelet,
+                 'LL': L_facelet,
+                 'Li': Li_facelet,
+                 '2L': TL_facelet,
+                 'RR': R_facelet,
+                 'Ri': Ri_facelet,
+                 '2R': TR_facelet,
+                 'FF': F_facelet,
+                 'Fi': Fi_facelet,
+                 '2F': TF_facelet,
+                 'BB': B_facelet,
+                 'Bi': Bi_facelet,
+                 '2B': TB_facelet}
     for i in range(int(len(moveset) / 2)):
         try:
             move_dict[moveset[i*2:(i*2)+2]](facelet)
@@ -320,14 +323,14 @@ def do_moveset(moveset, facelet):
             break
     return facelet
 
-#Tensorflow
 
-#Import training data
+# Tensorflow
+
+# Import training data
 training_data_df = pd.read_csv('training_data.csv', dtype=string)
 
 x_training = training_data_df[['scramble']].values
 y_training = training_data_df[['solution']].values
 
 with tf.Session() as session:
-
-    print()
+    pass
