@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="" />
+    <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/cube_robot/scramble_recog.py" afterPath="$PROJECT_DIR$/cube_robot/scramble_recog.py" />
+      <change beforePath="$PROJECT_DIR$/cube_robot/solver_main.py" afterPath="$PROJECT_DIR$/cube_robot/solver_main.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,40 +26,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="326" column="12" lean-forward="false" selection-start-line="326" selection-start-column="12" selection-end-line="326" selection-end-column="12" />
+            <state relative-caret-position="851">
+              <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#3441#4289#0" expanded="false" />
-                <element signature="e#4319#5167#0" expanded="false" />
-                <element signature="e#5196#6044#0" expanded="false" />
-                <element signature="e#6074#6922#0" expanded="false" />
-                <element signature="e#6952#7800#0" expanded="false" />
-                <element signature="e#7829#8677#0" expanded="false" />
-                <element signature="e#8707#9555#0" expanded="false" />
-                <element signature="e#9585#10433#0" expanded="false" />
-                <element signature="e#10462#11310#0" expanded="false" />
-                <element signature="e#11340#12188#0" expanded="false" />
-                <element signature="e#12218#13066#0" expanded="false" />
-                <element signature="e#13095#13943#0" expanded="false" />
-                <element signature="e#13973#14821#0" expanded="false" />
-                <element signature="e#14851#15699#0" expanded="false" />
-                <element signature="e#15728#16576#0" expanded="false" />
-                <element signature="e#16606#17454#0" expanded="false" />
-                <element signature="e#17484#18332#0" expanded="false" />
+                <element signature="e#2871#3719#0" expanded="false" />
+                <element signature="e#3749#4597#0" expanded="false" />
+                <element signature="e#4627#5475#0" expanded="false" />
+                <element signature="e#5504#6352#0" expanded="false" />
+                <element signature="e#6382#7230#0" expanded="false" />
+                <element signature="e#7260#8108#0" expanded="false" />
+                <element signature="e#8137#8985#0" expanded="false" />
+                <element signature="e#9015#9863#0" expanded="false" />
+                <element signature="e#9893#10741#0" expanded="false" />
+                <element signature="e#10770#11618#0" expanded="false" />
+                <element signature="e#11648#12496#0" expanded="false" />
+                <element signature="e#12526#13374#0" expanded="false" />
+                <element signature="e#13403#14251#0" expanded="false" />
+                <element signature="e#14281#15129#0" expanded="false" />
+                <element signature="e#15159#16007#0" expanded="false" />
+                <element signature="e#16036#16884#0" expanded="false" />
+                <element signature="e#16914#17762#0" expanded="false" />
+                <element signature="e#17792#18640#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+            <state relative-caret-position="2053">
+              <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ce_to_solver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cube_robot/ce_to_solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,8 +166,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,7 +292,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2954796" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23153253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -313,13 +328,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Tensorflow/Exersize Files/02/addition final.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arraySetup.txt" />
     <entry file="file://$PROJECT_DIR$/solverMain.py" />
     <entry file="file://$PROJECT_DIR$/../../Tensorflow/Exersize Files/02/addition final.py">
@@ -466,13 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/array_setup.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cube_robot/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -494,38 +495,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
+    <entry file="file://$PROJECT_DIR$/array_setup.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1909">
-          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+        <state relative-caret-position="345">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cube_robot/ce_to_solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="326" column="12" lean-forward="false" selection-start-line="326" selection-start-column="12" selection-end-line="326" selection-end-column="12" />
+        <state relative-caret-position="851">
+          <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#3441#4289#0" expanded="false" />
-            <element signature="e#4319#5167#0" expanded="false" />
-            <element signature="e#5196#6044#0" expanded="false" />
-            <element signature="e#6074#6922#0" expanded="false" />
-            <element signature="e#6952#7800#0" expanded="false" />
-            <element signature="e#7829#8677#0" expanded="false" />
-            <element signature="e#8707#9555#0" expanded="false" />
-            <element signature="e#9585#10433#0" expanded="false" />
-            <element signature="e#10462#11310#0" expanded="false" />
-            <element signature="e#11340#12188#0" expanded="false" />
-            <element signature="e#12218#13066#0" expanded="false" />
-            <element signature="e#13095#13943#0" expanded="false" />
-            <element signature="e#13973#14821#0" expanded="false" />
-            <element signature="e#14851#15699#0" expanded="false" />
-            <element signature="e#15728#16576#0" expanded="false" />
-            <element signature="e#16606#17454#0" expanded="false" />
-            <element signature="e#17484#18332#0" expanded="false" />
+            <element signature="e#2871#3719#0" expanded="false" />
+            <element signature="e#3749#4597#0" expanded="false" />
+            <element signature="e#4627#5475#0" expanded="false" />
+            <element signature="e#5504#6352#0" expanded="false" />
+            <element signature="e#6382#7230#0" expanded="false" />
+            <element signature="e#7260#8108#0" expanded="false" />
+            <element signature="e#8137#8985#0" expanded="false" />
+            <element signature="e#9015#9863#0" expanded="false" />
+            <element signature="e#9893#10741#0" expanded="false" />
+            <element signature="e#10770#11618#0" expanded="false" />
+            <element signature="e#11648#12496#0" expanded="false" />
+            <element signature="e#12526#13374#0" expanded="false" />
+            <element signature="e#13403#14251#0" expanded="false" />
+            <element signature="e#14281#15129#0" expanded="false" />
+            <element signature="e#15159#16007#0" expanded="false" />
+            <element signature="e#16036#16884#0" expanded="false" />
+            <element signature="e#16914#17762#0" expanded="false" />
+            <element signature="e#17792#18640#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2053">
+          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
