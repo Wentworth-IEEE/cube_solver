@@ -19,62 +19,62 @@
 #define BI 16
 #define B2 17
 
-void OpCodeSwitch(unsigned char code)
+void OpCodeSwitch(unsigned char code, int* motor_pin, int* dir_pin, int* steps, int* dir)
 {
 switch (code) {
   case RR:
-    Right();
+    Right(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case RI:
-    RightInverse();
+    RightInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case R2:
-    DoubleRight();
+    DoubleRight(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case LL:
-    Left();
+    Left(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case LI:
-    LeftInverse();
+    LeftInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case L2:
-    DoubleLeft();
+    DoubleLeft(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case UU:
-    Up();
+    Up(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case UI:
-    UpInverse();
+    UpInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case U2:
-    DoubleUp();
+    DoubleUp(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case DD:
-    Down();
+    Down(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case DI:
-    DownInverse();
+    DownInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case D2:
-    DoubleDown();
+    DoubleDown(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case FF:
-    Front();
+    Front(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case FI:
-    FrontInverse();
+    FrontInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case F2:
-    DoubleFront();
+    DoubleFront(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case BB:
-    Back();
+    Back(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case BI:
-    BackInverse();
+    BackInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
   case B2:
-    DoubleBack();
+    DoubleBack(int* motor_pin, int* dir_pin, int* steps, int* dir);
     break;
 
 }
