@@ -323,6 +323,8 @@ def do_moveset(moveset, facelet):
                  'BB': B_facelet,
                  'Bi': Bi_facelet,
                  '2B': TB_facelet}
+
+    # Iterate through the moveset two characters at a time
     for i in range(int(len(moveset) / 2)):
         try:
             move_dict[moveset[i*2:(i*2)+2]](facelet)

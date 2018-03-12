@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="13f8ae10-88cf-4182-a66d-b2a86d17ca2d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cube_robot/scramble_recog.py" afterPath="$PROJECT_DIR$/cube_robot/scramble_recog.py" />
       <change beforePath="$PROJECT_DIR$/cube_robot/solver_main.py" afterPath="$PROJECT_DIR$/cube_robot/solver_main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="solver_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+            <state relative-caret-position="236">
+              <caret line="326" column="58" lean-forward="false" selection-start-line="326" selection-start-column="58" selection-end-line="326" selection-end-column="58" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#2871#3719#0" expanded="false" />
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scramble_recog.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2053">
-              <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+            <state relative-caret-position="506">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,8 +114,8 @@
         <option value="$PROJECT_DIR$/scramble_recog.py" />
         <option value="$PROJECT_DIR$/array_setup.txt" />
         <option value="$PROJECT_DIR$/solver_main.py" />
-        <option value="$PROJECT_DIR$/cube_robot/solver_main.py" />
         <option value="$PROJECT_DIR$/cube_robot/scramble_recog.py" />
+        <option value="$PROJECT_DIR$/cube_robot/solver_main.py" />
       </list>
     </option>
   </component>
@@ -127,10 +126,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1274" />
-    <option name="height" value="1397" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -150,6 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,14 +166,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/Google Drive/Programming/Python" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -279,12 +278,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517607217883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improved documentation and code readability">
+      <created>1519673556457</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519673556458</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933193" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -292,7 +297,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2954796" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23153253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -319,7 +324,8 @@
   <component name="VcsManagerConfiguration">
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <MESSAGE value="began implementing image recognition" />
-    <option name="LAST_COMMIT_MESSAGE" value="began implementing image recognition" />
+    <MESSAGE value="Improved documentation and code readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved documentation and code readability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -510,10 +516,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cube_robot/solver_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        <state relative-caret-position="236">
+          <caret line="326" column="58" lean-forward="false" selection-start-line="326" selection-start-column="58" selection-end-line="326" selection-end-column="58" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2871#3719#0" expanded="false" />
@@ -535,14 +549,6 @@
             <element signature="e#16914#17762#0" expanded="false" />
             <element signature="e#17792#18640#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cube_robot/scramble_recog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2053">
-          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
