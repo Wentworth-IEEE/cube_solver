@@ -1,4 +1,4 @@
-Solver will interpret the cube using twoarrays, one on the cubie level, and one on the facelet level.
+Solver will interpret the cube using two arrays, one on the cubie level, and one on the facelet level.
 The Cubie array is a 3 dimensional array, the third level of the array denotes each layer, which is numbered 0-2, corresponding to the U, E, and D layers.
 The Facelet array is a 3 dimensional array, the third level of the array denotes each face of the cube, which is numbered 0-5, corresponding to U, D, L, R, F, and B faces.
 Cube will be assumed to be in WCA scramble position, white on top, green on front.
