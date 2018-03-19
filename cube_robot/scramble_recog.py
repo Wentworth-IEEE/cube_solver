@@ -89,13 +89,18 @@ positions = [[[[[0, 0, 0, 0], 0], [[0, 0, 0, 0], ], [[0, 0, 0, 0], 0]],
               [[[0, 0, 0, 0], 0], [[0, 0, 0, 0], 0], [[0, 0, 0, 0], 0]]]]
 # cube:[face:[row:[tile:[coordinates:[x_final, y_final, x_initial, y_initial], image]]]]]
 
-for i in range(6):
-    for j in range(3):
-        for k in range(3):
-            if positions[i][j][k][0] is not None:  # Check that the tile has coordinates
-                scrambled[i][j][k] = find_color(avg_color(positions[i][j][k][0], positions[i][j][k][1]))
-            else:
-                scrambled[i][j][k] = colors_index[i]
+def genScrambled():
+    for i in range(6):
+        for j in range(3):
+            for k in range(3):
+                if positions[i][j][k][0] is not None:  # Check that the tile has coordinates
+                    scrambled[i][j][k] = find_color(avg_color(positions[i][j][k][0], positions[i][j][k][1]))
+                else:
+                    scrambled[i][j][k] = colors_index[i]
+    return scrambled
 
+
+def getScrambled():
+    return genScrambled()
 
 
