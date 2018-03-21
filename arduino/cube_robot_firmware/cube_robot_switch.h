@@ -1,3 +1,6 @@
+#ifndef INCLUDE_CUBE_ROBOT_SWITCH_H_
+#define INCLUDE_CUBE_ROBOT_SWITCH_H_
+
 #include "cube_robot_operations.h"
 
 #define RR 0
@@ -23,59 +26,61 @@ void OpCodeSwitch(unsigned char code, int* motor_pin, int* dir_pin, int* steps, 
 {
 switch (code) {
   case RR:
-    Right(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Right(motor_pin,  dir_pin,  steps,  dir);
     break;
   case RI:
-    RightInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    RightInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case R2:
-    DoubleRight(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleRight( motor_pin,  dir_pin,  steps,  dir);
     break;
   case LL:
-    Left(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Left( motor_pin,  dir_pin,  steps,  dir);
     break;
   case LI:
-    LeftInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    LeftInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case L2:
-    DoubleLeft(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleLeft( motor_pin,  dir_pin,  steps,  dir);
     break;
   case UU:
-    Up(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Up( motor_pin,  dir_pin,  steps,  dir);
     break;
   case UI:
-    UpInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    UpInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case U2:
-    DoubleUp(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleUp( motor_pin,  dir_pin,  steps,  dir);
     break;
   case DD:
-    Down(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Down( motor_pin,  dir_pin,  steps,  dir);
     break;
   case DI:
-    DownInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DownInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case D2:
-    DoubleDown(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleDown( motor_pin,  dir_pin,  steps,  dir);
     break;
   case FF:
-    Front(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Front( motor_pin,  dir_pin,  steps,  dir);
     break;
   case FI:
-    FrontInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    FrontInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case F2:
-    DoubleFront(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleFront( motor_pin,  dir_pin,  steps,  dir);
     break;
   case BB:
-    Back(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    Back( motor_pin,  dir_pin,  steps,  dir);
     break;
   case BI:
-    BackInverse(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    BackInverse( motor_pin,  dir_pin,  steps,  dir);
     break;
   case B2:
-    DoubleBack(int* motor_pin, int* dir_pin, int* steps, int* dir);
+    DoubleBack( motor_pin,  dir_pin,  steps,  dir);
     break;
 
 }
 }
+
+#endif  // INCLUDE_CUBE_ROBOT_SWITCH_H_
