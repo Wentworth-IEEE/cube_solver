@@ -22,7 +22,7 @@ void loop() {
   OpCodeSwitch(Serial.read(), &motor_pin, &dir_pin, &steps, &dir);
   digitalWrite(dir_pin, dir);
   for (int i = 0; i < steps; i++){
-    digitalWrite(motor_pin, 1);
-    digitalWrite(motor_pin, 0);
+    digitalWrite(motor_pin, HIGH);
+    digitalWrite(motor_pin, LOW);
   }
 }

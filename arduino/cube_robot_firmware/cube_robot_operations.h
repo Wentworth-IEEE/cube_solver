@@ -17,12 +17,12 @@
 #define BACK_MOTOR_DIR_PIN 0
 
 //define step sizes
-#define QUARTER_TURN 0
-#define HALF_TURN 0
+#define QUARTER_TURN 50
+#define HALF_TURN 100
 
 //define direction
 #define CLOCKWISE 0
-#define COUNTER_CLOCKWISE 0
+#define COUNTER_CLOCKWISE 1
 
 void Right(int* motor_pin, int* dir_pin, int* steps, int* dir)
 {
