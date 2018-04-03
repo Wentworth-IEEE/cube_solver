@@ -23,6 +23,8 @@ void loop() {
   digitalWrite(dir_pin, dir);
   for (int i = 0; i < steps; i++){
     digitalWrite(motor_pin, HIGH);
+    delay(1);
     digitalWrite(motor_pin, LOW);
+    delay(1);
   }
 }

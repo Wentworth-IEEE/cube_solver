@@ -3,24 +3,24 @@
 
 #include "cube_robot_operations.h"
 
-#define RR 0
-#define RI 1
-#define R2 2
-#define LL 3
-#define LI 4
-#define L2 5
-#define UU 6
-#define UI 7
-#define U2 8
-#define DD 9
-#define DI 10
-#define D2 11
-#define FF 12
-#define FI 13
-#define F2 14
-#define BB 15
-#define BI 16
-#define B2 17
+#define RR 65
+#define RI 66
+#define R2 67
+#define LL 68
+#define LI 69
+#define L2 70
+#define UU 71
+#define UI 72
+#define U2 73
+#define DD 74
+#define DI 75
+#define D2 76
+#define FF 77
+#define FI 78
+#define F2 79
+#define BB 80
+#define BI 81
+#define B2 82
 
 void OpCodeSwitch(unsigned char code, int* motor_pin, int* dir_pin, int* steps, int* dir)
 {
