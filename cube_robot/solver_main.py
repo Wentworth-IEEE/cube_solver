@@ -8,16 +8,15 @@ cubie_solved = [[['WBO', 'WB', 'WBR'], ['WO', 'W', 'WR'], ['WGO', 'WG', 'WGR']],
                 [['BO', 'B', 'BR'], ['O', 'C', 'R'], ['GO', 'G', 'GR']],
                 [['YBO', 'YB', 'YBR'], ['YO', 'Y', 'YR'], ['YGO', 'YG', 'YGR']]]
 
+cross_solved = [[['xxx', 'Wx', 'xxx'], ['Wx', 'W', 'Wx'], ['xxx', 'Wx', 'xxx']],
+                [['xx', 'x', 'xx'], ['x', 'x', 'x'], ['xx', 'x', 'xx']],
+                [['xxx', 'xx', 'xxx'], ['xx', 'x', 'xx'], ['xxx', 'xx', 'xxx']]]          
+
 # Defining scrambled state
 cubie_scrambled = face_to_cube(getScrambled())
 
 # Tensorflow
 
-# Import training data
-training_data_df = pd.read_csv('training_data.csv', dtype='string')
-
-x_training = training_data_df[['scramble']].values
-y_training = training_data_df[['solution']].values
-
 with tf.Session() as session:
     pass
+    

@@ -290,24 +290,7 @@ def TB_facelet(facelet):
                 if temp_facelet[i][j][k] != 0:
                     facelet[i][j][k] = temp_facelet[i][j][k]
     return facelet
-def x_facelet(facelet):
-    pass
-def xi_facelet(facelet):
-    pass
-def Tx_facelet(facelet):
-    pass
-def y_facelet(facelet):
-    pass
-def yi_facelet(facelet):
-    pass
-def Ty_facelet(facelet):
-    pass
-def z_facelet(facelet):
-    pass
-def zi_facelet(facelet):
-    pass
-def Tz_facelet(facelet):
-    pass
+
 
 # Excecutes a moveset
 def do_moveset(moveset, facelet):
