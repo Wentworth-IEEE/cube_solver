@@ -41,6 +41,10 @@ class cube:
                           'R': self.side_red,
                           'O': self.side_orange}
 
+    def __init_side__(self, color):
+        # creates a 3x3 array of the color specified
+        return [[color for col in range(3)] for row in range(3)]
+
     def get_side(self, side): # returns a two-dimensional array of one side
         return self.side_dict[side]
         
@@ -84,8 +88,100 @@ class cube:
         return cube_definition
 
     def do_move(self, move):
-        pass
+        move_dict = {'U': self.U_facelet,
+                     'Ui': self.Ui_facelet,
+                     '2U': self.TU_facelet,
+                     'D': self.D_facelet,
+                     'Di': self.Di_facelet,
+                     '2D': self.TD_facelet,
+                     'L': self.L_facelet,
+                     'Li': self.Li_facelet,
+                     '2L': self.TL_facelet,
+                     'R': self.R_facelet,
+                     'Ri': self.Ri_facelet,
+                     '2R': self.TR_facelet,
+                     'F': self.F_facelet,
+                     'Fi': self.Fi_facelet,
+                     '2F': self.TF_facelet,
+                     'B': self.B_facelet,
+                     'Bi': self.Bi_facelet,
+                     '2B': self.TB_facelet}
 
-    def __init_side__(self, color):
-        # creates a 3x3 array of the color specified
-        return [[color for col in range(3)] for row in range(3)]
+        try:
+            move_dict[move]()
+        except KeyError:
+            print('Specified move not found. Possible error in moveset.')
+
+    def U_facelet(self):
+        side_white = self.side_white
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_white[0][0] = self.side_white[2][0]
+        side_white[0][1] = self.side_white[1][0]
+        side_white[0][2] = self.side_white[0][0]
+        side_white[1][0] = self.side_white[2][1]
+        side_white[1][2] = self.side_white[2][2]
+        side_white[2][0] = self.side_white[2][2]
+        side_white[2][1] = self.side_white[1][2]
+        side_white[2][2] = self.side_white[0][2]
+        side_blue[0] = self.side_orange[0]
+        side_green[0] = self.side_red[0]
+        side_red[0] = self.side_blue[0]
+        side_orange[0] = self.side_green[0]
+        self.side_white = side_white
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def Ui_facelet(self):
+        # TODO: Define move
+        side_white = self.side_white
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_white[0][0] = self.side_white[0][2]
+        side_white[0][1] = self.side_white[1][2]
+        side_white[0][2] = self.side_white[2][2]
+        side_white[1][0] = self.side_white[0][1]
+        side_white[1][2] = self.side_white[2][1]
+        side_white[2][0] = self.side_white[0][0]
+        side_white[2][1] = self.side_white[1][0]
+        side_white[2][2] = self.side_white[2][0]
+        side_blue[0] = self.side_red[0]
+        side_green[0] = self.side_orange[0]
+        side_red[0] = self.side_green[0]
+        side_orange[0] = self.side_blue[0]
+        self.side_white = side_white
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def TU_facelet(self):
+        # TODO: Define move
+        side_white = self.side_white
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_white[0][0] = self.side_white[][]
+        side_white[0][1] = self.side_white[][]
+        side_white[0][2] = self.side_white[][]
+        side_white[1][0] = self.side_white[][]
+        side_white[1][2] = self.side_white[][]
+        side_white[2][0] = self.side_white[][]
+        side_white[2][1] = self.side_white[][]
+        side_white[2][2] = self.side_white[][]
+        side_blue[] = 
+        side_green[] = 
+        side_red[] = 
+        side_orange[] = 
+        self.side_white = side_white
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
