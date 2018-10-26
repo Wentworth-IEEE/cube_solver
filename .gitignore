@@ -1,7 +1,12 @@
-*.iml
-*.xml
+
+#--------------------IDE FOLDERS------------------------#
+
 .idea/
 .vscode/
+
+#--------------------CUBE EXPLORER----------------------#
+
+cube_explorer/
 
 #--------------------PYTHON STUFF-----------------------#
 
@@ -108,6 +113,3 @@ ENV/
 # mypy
 .mypy_cache/
 .DS_Store
-
-# vscode directory
-.vscode/
