@@ -1,4 +1,4 @@
-import solver as sv # kociemba two-phase solver
+import solver as sv  # kociemba two-phase solver
 
 '''
 The names of the facelet positions of the cube
@@ -24,6 +24,8 @@ The names of the facelet positions of the cube
                     |*20* *21* *22*|
                     |**************|
 '''
+
+
 class cube:
     def __init__(self):
         self.side_white = self.__init_side__('W') # initialize each side with the specified color for all facelets
@@ -45,10 +47,10 @@ class cube:
         # creates a 3x3 array of the color specified
         return [[color for col in range(3)] for row in range(3)]
 
-    def get_side(self, side): # returns a two-dimensional array of one side
+    def get_side(self, side):  # returns a two-dimensional array of one side
         return self.side_dict[side]
         
-    def set_side(self, side, colors): # sets the values of a side, with the side name and a 2D array of the facelets
+    def set_side(self, side, colors):  # sets the values of a side, with the side name and a 2D array of the facelets
         self.side_dict[side] = colors
 
     def is_solved(self):
@@ -56,27 +58,28 @@ class cube:
         for s in range(6):
             for i in range(3):
                 for j in range(3):
-                    if (self.sides[s][i][j] != self.colors[s]): # checks that all facelets are the correct colors for each given side
+                    # checks that all facelets are the correct colors for each given side
+                    if self.sides[s][i][j] != self.colors[s]:
                         solved = False
         return solved
 
     def degree_unsolved(self):
         solution = sv.solve(self.__format_as_cube_def__(), 20, 2)
-        #TODO:
+        # TODO:
         # length of solution is the degree unsolved
 
         pass
 
     def __format_as_cube_def__(self):
         cube_definition = ''
-        color_dict = {'W': 'U', # cube explorer refers to the facelet colors as which side they are on, color-neutral
+        color_dict = {'W': 'U',  # cube explorer refers to the facelet colors as which side they are on, color-neutral
                       'Y': 'D', 
                       'G': 'F',
                       'B': 'B',
                       'O': 'L',
                       'R': 'R'}
 
-        # cube explorer lists the sides in a cifferent order; U, R, F, D, L, B
+        # cube explorer lists the sides in a different order; U, R, F, D, L, B
         sides_reordered = [self.side_white, self.side_red, self.side_green, self.side_yellow, self.side_orange, self.side_blue]
 
         # iterate through all facelets and append to cube definition
@@ -137,7 +140,6 @@ class cube:
         self.side_orange = side_orange
 
     def Ui_facelet(self):
-        # TODO: Define move
         side_white = self.side_white
         side_blue = self.side_blue
         side_green = self.side_green
@@ -162,26 +164,421 @@ class cube:
         self.side_orange = side_orange
 
     def TU_facelet(self):
-        # TODO: Define move
         side_white = self.side_white
         side_blue = self.side_blue
         side_green = self.side_green
         side_red = self.side_red
         side_orange = self.side_orange
-        side_white[0][0] = self.side_white[][]
-        side_white[0][1] = self.side_white[][]
-        side_white[0][2] = self.side_white[][]
-        side_white[1][0] = self.side_white[][]
-        side_white[1][2] = self.side_white[][]
-        side_white[2][0] = self.side_white[][]
-        side_white[2][1] = self.side_white[][]
-        side_white[2][2] = self.side_white[][]
-        side_blue[] = 
-        side_green[] = 
-        side_red[] = 
-        side_orange[] = 
+        side_white[0][0] = self.side_white[2][2]
+        side_white[0][1] = self.side_white[2][1]
+        side_white[0][2] = self.side_white[2][0]
+        side_white[1][0] = self.side_white[1][2]
+        side_white[1][2] = self.side_white[1][0]
+        side_white[2][0] = self.side_white[0][2]
+        side_white[2][1] = self.side_white[0][1]
+        side_white[2][2] = self.side_white[0][0]
+        side_blue[0] = self.side_green[0]
+        side_green[0] = self.side_blue[0]
+        side_red[0] = self.side_orange[0]
+        side_orange[0] = self.side_red[0]
         self.side_white = side_white
         self.side_blue = side_blue
         self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def D_facelet(self):
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_yellow[0][0] = self.side_yellow[2][0]
+        side_yellow[0][1] = self.side_yellow[1][0]
+        side_yellow[0][2] = self.side_yellow[0][0]
+        side_yellow[1][0] = self.side_yellow[2][1]
+        side_yellow[1][2] = self.side_yellow[2][2]
+        side_yellow[2][0] = self.side_yellow[2][2]
+        side_yellow[2][1] = self.side_yellow[1][2]
+        side_yellow[2][2] = self.side_yellow[0][2]
+        side_blue[2] = self.side_red[2]
+        side_green[2] = self.side_orange[2]
+        side_red[2] = self.side_green[2]
+        side_orange[2] = self.side_blue[2]
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def Di_facelet(self):
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_yellow[0][0] = self.side_yellow[0][2]
+        side_yellow[0][1] = self.side_yellow[1][2]
+        side_yellow[0][2] = self.side_yellow[2][2]
+        side_yellow[1][0] = self.side_yellow[0][1]
+        side_yellow[1][2] = self.side_yellow[2][1]
+        side_yellow[2][0] = self.side_yellow[0][0]
+        side_yellow[2][1] = self.side_yellow[1][0]
+        side_yellow[2][2] = self.side_yellow[2][0]
+        side_blue[2] = self.side_orange[2]
+        side_green[2] = self.side_red[2]
+        side_red[2] = self.side_blue[2]
+        side_orange[2] = self.side_green[2]
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def TD_facelet(self):
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_yellow[0][0] = self.side_yellow[2][2]
+        side_yellow[0][1] = self.side_yellow[2][1]
+        side_yellow[0][2] = self.side_yellow[2][0]
+        side_yellow[1][0] = self.side_yellow[1][2]
+        side_yellow[1][2] = self.side_yellow[1][0]
+        side_yellow[2][0] = self.side_yellow[0][2]
+        side_yellow[2][1] = self.side_yellow[0][1]
+        side_yellow[2][2] = self.side_yellow[0][0]
+        side_blue[2] = self.side_green[2]
+        side_green[2] = self.side_blue[2]
+        side_red[2] = self.side_orange[2]
+        side_orange[2] = self.side_red[2]
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def L_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_orange = self.side_orange
+        side_orange[0][0] = self.side_orange[2][0]
+        side_orange[0][1] = self.side_orange[1][0]
+        side_orange[0][2] = self.side_orange[0][0]
+        side_orange[1][0] = self.side_orange[2][1]
+        side_orange[1][2] = self.side_orange[2][2]
+        side_orange[2][0] = self.side_orange[2][2]
+        side_orange[2][1] = self.side_orange[1][2]
+        side_orange[2][2] = self.side_orange[0][2]
+        side_white[0][0] = self.side_blue[0][0]
+        side_white[1][0] = self.side_blue[1][0]
+        side_white[2][0] = self.side_blue[2][0]
+        side_yellow[0][0] = self.side_green[0][0]
+        side_yellow[1][0] = self.side_green[1][0]
+        side_yellow[2][0] = self.side_green[2][0]
+        side_blue[0][0] = self.side_yellow[0][0]
+        side_blue[1][0] = self.side_yellow[1][0]
+        side_blue[2][0] = self.side_yellow[2][0]
+        side_green[0][0] = self.side_white[0][0]
+        side_green[1][0] = self.side_white[1][0]
+        side_green[2][0] = self.side_white[2][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_orange = side_orange
+
+    def Li_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_orange = self.side_orange
+        side_orange[0][0] = self.side_orange[0][2]
+        side_orange[0][1] = self.side_orange[1][2]
+        side_orange[0][2] = self.side_orange[2][2]
+        side_orange[1][0] = self.side_orange[0][1]
+        side_orange[1][2] = self.side_orange[2][1]
+        side_orange[2][0] = self.side_orange[0][0]
+        side_orange[2][1] = self.side_orange[1][0]
+        side_orange[2][2] = self.side_orange[2][0]
+        side_white[0][0] = self.side_green[0][0]
+        side_white[1][0] = self.side_green[1][0]
+        side_white[2][0] = self.side_green[2][0]
+        side_yellow[0][0] = self.side_blue[0][0]
+        side_yellow[1][0] = self.side_blue[1][0]
+        side_yellow[2][0] = self.side_blue[2][0]
+        side_blue[0][0] = self.side_white[0][0]
+        side_blue[1][0] = self.side_white[1][0]
+        side_blue[2][0] = self.side_white[2][0]
+        side_green[0][0] = self.side_yellow[0][0]
+        side_green[1][0] = self.side_yellow[1][0]
+        side_green[2][0] = self.side_yellow[2][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_orange = side_orange
+
+    def TL_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_orange = self.side_orange
+        side_orange[0][0] = self.side_orange[2][2]
+        side_orange[0][1] = self.side_orange[2][1]
+        side_orange[0][2] = self.side_orange[2][0]
+        side_orange[1][0] = self.side_orange[1][2]
+        side_orange[1][2] = self.side_orange[1][0]
+        side_orange[2][0] = self.side_orange[0][2]
+        side_orange[2][1] = self.side_orange[0][1]
+        side_orange[2][2] = self.side_orange[0][0]
+        side_white[0][0] = self.side_yellow[0][0]
+        side_white[1][0] = self.side_yellow[1][0]
+        side_white[2][0] = self.side_yellow[2][0]
+        side_yellow[0][0] = self.side_white[0][0]
+        side_yellow[1][0] = self.side_white[1][0]
+        side_yellow[2][0] = self.side_white[2][0]
+        side_blue[0][0] = self.side_green[0][0]
+        side_blue[1][0] = self.side_green[1][0]
+        side_blue[2][0] = self.side_green[2][0]
+        side_green[0][0] = self.side_blue[0][0]
+        side_green[1][0] = self.side_blue[1][0]
+        side_green[2][0] = self.side_blue[2][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_orange = side_orange
+
+    def R_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_red[0][0] = self.side_red[2][0]
+        side_red[0][1] = self.side_red[1][0]
+        side_red[0][2] = self.side_red[0][0]
+        side_red[1][0] = self.side_red[2][1]
+        side_red[1][2] = self.side_red[2][2]
+        side_red[2][0] = self.side_red[2][2]
+        side_red[2][1] = self.side_red[1][2]
+        side_red[2][2] = self.side_red[0][2]
+        side_white[0][2] = self.side_green[0][2]
+        side_white[1][2] = self.side_green[1][2]
+        side_white[2][2] = self.side_green[2][2]
+        side_yellow[0][2] = self.side_blue[0][2]
+        side_yellow[1][2] = self.side_blue[1][2]
+        side_yellow[2][2] = self.side_blue[2][2]
+        side_blue[0][2] = self.side_white[0][2]
+        side_blue[1][2] = self.side_white[1][2]
+        side_blue[2][2] = self.side_white[2][2]
+        side_green[0][2] = self.side_yellow[0][2]
+        side_green[1][2] = self.side_yellow[1][2]
+        side_green[2][2] = self.side_yellow[2][2]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+
+    def Ri_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_red[0][0] = self.side_red[0][2]
+        side_red[0][1] = self.side_red[1][2]
+        side_red[0][2] = self.side_red[2][2]
+        side_red[1][0] = self.side_red[0][1]
+        side_red[1][2] = self.side_red[2][1]
+        side_red[2][0] = self.side_red[0][0]
+        side_red[2][1] = self.side_red[1][0]
+        side_red[2][2] = self.side_red[2][0]
+        side_white[0][2] = self.side_blue[0][2]
+        side_white[1][2] = self.side_blue[1][2]
+        side_white[2][2] = self.side_blue[2][2]
+        side_yellow[0][2] = self.side_green[0][2]
+        side_yellow[1][2] = self.side_green[1][2]
+        side_yellow[2][2] = self.side_green[2][2]
+        side_blue[0][2] = self.side_yellow[0][2]
+        side_blue[1][2] = self.side_yellow[1][2]
+        side_blue[2][2] = self.side_yellow[2][2]
+        side_green[0][2] = self.side_white[0][2]
+        side_green[1][2] = self.side_white[1][2]
+        side_green[2][2] = self.side_white[2][2]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+
+    def TR_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_green = self.side_green
+        side_red = self.side_red
+        side_red[0][0] = self.side_red[2][2]
+        side_red[0][1] = self.side_red[2][1]
+        side_red[0][2] = self.side_red[2][0]
+        side_red[1][0] = self.side_red[1][2]
+        side_red[1][2] = self.side_red[1][0]
+        side_red[2][0] = self.side_red[0][2]
+        side_red[2][1] = self.side_red[0][1]
+        side_red[2][2] = self.side_red[0][0]
+        side_white[0][2] = self.side_yellow[0][2]
+        side_white[1][2] = self.side_yellow[1][2]
+        side_white[2][2] = self.side_yellow[2][2]
+        side_yellow[0][2] = self.side_white[0][2]
+        side_yellow[1][2] = self.side_white[1][2]
+        side_yellow[2][2] = self.side_white[2][2]
+        side_blue[0][2] = self.side_green[0][2]
+        side_blue[1][2] = self.side_green[1][2]
+        side_blue[2][2] = self.side_green[2][2]
+        side_green[0][2] = self.side_blue[0][2]
+        side_green[1][2] = self.side_blue[1][2]
+        side_green[2][2] = self.side_blue[2][2]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_green = side_green
+        self.side_red = side_red
+
+    def F_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_green[0][0] = self.side_green[2][0]
+        side_green[0][1] = self.side_green[1][0]
+        side_green[0][2] = self.side_green[0][0]
+        side_green[1][0] = self.side_green[2][1]
+        side_green[1][2] = self.side_green[2][2]
+        side_green[2][0] = self.side_green[2][2]
+        side_green[2][1] = self.side_green[1][2]
+        side_green[2][2] = self.side_green[0][2]
+        side_white[2][0] = self.side_orange[2][2]
+        side_white[2][1] = self.side_orange[1][2]
+        side_white[2][2] = self.side_orange[0][2]
+        side_yellow[0][0] = self.side_red[2][0]
+        side_yellow[0][1] = self.side_red[1][0]
+        side_yellow[0][2] = self.side_red[0][0]
+        side_red[0][0] = self.side_white[2][0]
+        side_red[1][0] = self.side_white[2][1]
+        side_red[2][0] = self.side_white[2][2]
+        side_orange[0][2] = self.side_yellow[0][0]
+        side_orange[1][2] = self.side_yellow[0][1]
+        side_orange[2][2] = self.side_yellow[0][2]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def Fi_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_green[0][0] = self.side_green[0][2]
+        side_green[0][1] = self.side_green[1][2]
+        side_green[0][2] = self.side_green[2][2]
+        side_green[1][0] = self.side_green[0][1]
+        side_green[1][2] = self.side_green[2][1]
+        side_green[2][0] = self.side_green[0][0]
+        side_green[2][1] = self.side_green[1][0]
+        side_green[2][2] = self.side_green[2][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def TF_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_green = self.side_green
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_green[0][0] = self.side_green[2][2]
+        side_green[0][1] = self.side_green[2][1]
+        side_green[0][2] = self.side_green[2][0]
+        side_green[1][0] = self.side_green[1][2]
+        side_green[1][2] = self.side_green[1][0]
+        side_green[2][0] = self.side_green[0][2]
+        side_green[2][1] = self.side_green[0][1]
+        side_green[2][2] = self.side_green[0][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_green = side_green
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def B_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_blue[0][0] = self.side_blue[2][0]
+        side_blue[0][1] = self.side_blue[1][0]
+        side_blue[0][2] = self.side_blue[0][0]
+        side_blue[1][0] = self.side_blue[2][1]
+        side_blue[1][2] = self.side_blue[2][2]
+        side_blue[2][0] = self.side_blue[2][2]
+        side_blue[2][1] = self.side_blue[1][2]
+        side_blue[2][2] = self.side_blue[0][2]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def Bi_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_blue[0][0] = self.side_blue[0][2]
+        side_blue[0][1] = self.side_blue[1][2]
+        side_blue[0][2] = self.side_blue[2][2]
+        side_blue[1][0] = self.side_blue[0][1]
+        side_blue[1][2] = self.side_blue[2][1]
+        side_blue[2][0] = self.side_blue[0][0]
+        side_blue[2][1] = self.side_blue[1][0]
+        side_blue[2][2] = self.side_blue[2][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
+        self.side_red = side_red
+        self.side_orange = side_orange
+
+    def TB_facelet(self):
+        side_white = self.side_white
+        side_yellow = self.side_yellow
+        side_blue = self.side_blue
+        side_red = self.side_red
+        side_orange = self.side_orange
+        side_blue[0][0] = self.side_blue[2][2]
+        side_blue[0][1] = self.side_blue[2][1]
+        side_blue[0][2] = self.side_blue[2][0]
+        side_blue[1][0] = self.side_blue[1][2]
+        side_blue[1][2] = self.side_blue[1][0]
+        side_blue[2][0] = self.side_blue[0][2]
+        side_blue[2][1] = self.side_blue[0][1]
+        side_blue[2][2] = self.side_red[0][0]
+        self.side_white = side_white
+        self.side_yellow = side_yellow
+        self.side_blue = side_blue
         self.side_red = side_red
         self.side_orange = side_orange

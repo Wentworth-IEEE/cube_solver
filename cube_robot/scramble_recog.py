@@ -1,4 +1,5 @@
 import cv2
+import cube
 
 class scramble_recog:
     filename0 = 'test_image.jpg'
@@ -13,9 +14,7 @@ class scramble_recog:
     image_dict = {0: img0, 1: img1, 2: img2, 3: img3}
     colors_index = ['W', 'Y', 'B', 'G', 'R', 'O']
 
-
     def avg_color(self, coords, index):
-
         x_size = abs(coords[2] - coords[0])  # Find size of defined region
         y_size = abs(coords[3] - coords[1])
         full_size = x_size * y_size
@@ -26,7 +25,8 @@ class scramble_recog:
 
         for i in range(x_size):
             for j in range(y_size):
-                b_sum += image.item(i, j, 0)  # Find and sum the value for each of the b, g, and r components for each pixel
+                # Find and sum the value for each of the b, g, and r components for each pixel
+                b_sum += image.item(i, j, 0)
                 g_sum += image.item(i, j, 1)
                 r_sum += image.item(i, j, 2)
 
@@ -38,9 +38,7 @@ class scramble_recog:
 
         return bgr_final
 
-
     def find_color(self, bgr_input):
-
         # Defined values for each of the cube's colors
         colors = [[255, 255, 255],  # White
                 [0, 255, 255],    # Yellow
@@ -69,7 +67,8 @@ class scramble_recog:
         return color_final
 
     # FIXME: rewrite to utilize the cube class
-    def genScrambled(self):
+    # none of this does anything with how the code is currently set up
+    def gen_scrambled(self):
         for i in range(6):
             for j in range(3):
                 for k in range(3):
@@ -80,7 +79,7 @@ class scramble_recog:
         return self.scrambled
 
 
-    def getScrambled(self):
-        return self.genScrambled()
+    def get_scrambled(self):
+        return self.gen_scrambled()
 
 
