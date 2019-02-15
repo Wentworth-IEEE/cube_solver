@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
     dependencies = f.readlines()
 
 setup(
-    name='cube_robot',
+    name='src',
     version='0.0.1',
     description='Hopefully solves a Rubix Cube with a robot.',
     long_description='Hopefully solves a Rubix Cube with a robot.',
@@ -14,9 +14,9 @@ setup(
     author='IEEE Cube Robot Team',
     author_email='ieee@wit.edu',
     include_package_data=True,
-    packages=['cube_robot'],
+    packages=['src'],
     install_requires=dependencies,
     entry_points={
-        'console_scripts': ['cube_robot = cube_robot.__main__:main']
+        'console_scripts': ['src = src.__main__:main']
     }
 )
