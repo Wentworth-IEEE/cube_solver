@@ -38,14 +38,8 @@ class SolverApp:
         button_frame = ttk.Frame(master)
         solve_button = ttk.Button(button_frame, text='Solve', command=self.solve, width=14)
         scramble_button = ttk.Button(button_frame, text='Scramble', command=self.scramble, width=14)
-        refresh_button = ttk.Button(button_frame, text='Refresh Scramble', command=self.refresh, width=14)
-        save_button = ttk.Button(button_frame, text='Save Scramble', command=self.save, width=14)
-
-        if os == 'Windows':
-            solve_button.config(height=3)
-            scramble_button.config(height=3)
-            refresh_button.config(height=3)
-            save_button.config(height=3)
+        refresh_button = ttk.Button(button_frame, text='Refresh', command=self.refresh, width=14)
+        save_button = ttk.Button(button_frame, text='Save', command=self.save, width=14)
 
         solve_button.pack(anchor='w')
         scramble_button.pack(anchor='w')
@@ -56,7 +50,40 @@ class SolverApp:
         # Cube display
         cube_frame = ttk.Frame(master)
 
-        cube_frame.grid(column=1, row=1, sticky='e')
+        face_w0 = ttk.Label(cube_frame, background='blue')
+        '''
+        face_w1 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w2 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w3 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w4 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w5 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w6 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w7 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_w8 = ttk.Label(cube_frame, bg='white', width=20, height=20)
+        face_y0 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y1 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y2 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y3 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y4 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y5 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y6 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y7 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_y8 = ttk.Label(cube_frame, bg='yellow', width=20, height=20)
+        face_b0 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b1 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b2 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b3 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b4 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b5 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b6 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b7 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_b8 = ttk.Label(cube_frame, bg='blue', width=20, height=20)
+        face_g0 = ttk.Label(cube_frame, bg='green', width=20, height=20)
+        '''
+        face_w0.grid(column=3, row=0, padx=10, pady=10, sticky='nesw')
+        cube_frame.columnconfigure(3, weight=4)
+
+        cube_frame.grid(column=1, row=1, sticky='nesw')
 
     @staticmethod
     def scramble():
