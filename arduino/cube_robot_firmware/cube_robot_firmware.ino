@@ -71,8 +71,8 @@ static struct IBuff
 
 static const Motor Motors[] = 
 {
-    {10, 0},  // Right
-    {11, 0},  // Left
+    {10, 22},  // Right
+    {11, 24},  // Left
     {12, 0},  // Up
     {13, 0},  // Down
     {14, 0},  // Front
@@ -134,3 +134,6 @@ void loop() {
 //   }
 
 }
+
+
+// TODO: make a function that does ~40 random turns
