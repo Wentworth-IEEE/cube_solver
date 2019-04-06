@@ -46,7 +46,7 @@ def send_serial(message):
         print('Serial connection opened')
         ser.write(message)
     except:
-        show_text('Serial connection could no be opened')
+        show_text('Serial connection could not be opened')
 
     if ser.is_open:
         ser.close()
