@@ -4,19 +4,18 @@ cubestring = 'DUUBULDBFRBFRRULLLBRDFFFBLURDBFDFDRFRULBLUFDURRBLBDUDL'  # cube de
 # See module enums.py for the format of the cube definition string
 
 # ######################### Method 1: directly call the solve routine# #################################################
-# Advantage: No network layer needed. Disadvantage: For each solve, the tables have to be loaded which takes a few     #
-# seconds for each new solve.                                                                                          #
+# Advantage: No network layer needed. Disadvantage: Only local usage possible.                                                                  #
 ########################################################################################################################
 
 #  Uncomment this part if you want to use method 1
-
+"""
 import solver as sv
 a = sv.solve(cubestring, 20, 2)  # solve with a maximum of 20 moves and a timeout of 2 seconds for example
 print(a)
 a = sv.solve(cubestring, 18, 5)  # solve with a maximum of 18 moves and a timeout of 5 seconds for example
 print(a)
 quit()
-
+"""
 ########################################################################################################################
 
 
@@ -26,12 +25,10 @@ quit()
 
 #----------------------------------------------------------------------------------------------------------------------
 # Method 2a: Start the server from inside a Python script:
-'''
 import start_server
 from threading import Thread
 background_thread = Thread(target=start_server.start, args=(8080, 20, 2))
 background_thread.start()
-'''
 # Server listens now on port 8080, maxlength 20 moves, timeout 2 seconds
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -61,9 +58,19 @@ background_thread.start()
 
 import client_gui
 
+
 # From a terminal start the interface with
 # python client_gui.py
 # ----------------------------------------------------------------------------------------------------------------------
 
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Computer vision
+
+# Start the interface, the server and the webcam from a terminal with
+
+# python computer_vision.py
+
+# ----------------------------------------------------------------------------------------------------------------------
 ########################################################################################################################
 

@@ -111,7 +111,11 @@ class SolverThread(thr.Thread):
                 self.terminated.set()
 
             # compute initial phase 2 coordinates
-            m = self.sofar_phase1[-1]
+            if self.sofar_phase1:  # check if list is not empty
+                m = self.sofar_phase1[-1]
+            else:
+                m = en.Move.U1  # value is irrelevant here, no phase 1 moves
+
             if m in [en.Move.R3, en.Move.F3, en.Move.L3, en.Move.B3]:  # phase 1 solution come in pairs
                 corners = mv.corners_move[18 * self.cornersave + m - 1]  # apply R2, F2, L2 ord B2 on last ph1 solution
             else:
@@ -218,8 +222,8 @@ def solve(cubestring, max_length=20, timeout=3):
     solutions = []
     terminated = thr.Event()
     terminated.clear()
-    syms = cc.symmetries();
-    if len(list(set([16, 20, 24, 28]) & set(syms))) > 0:  # we have some rotational symmetry along a long diagonal
+    syms = cc.symmetries()
+    if len(list({16, 20, 24, 28} & set(syms))) > 0:  # we have some rotational symmetry along a long diagonal
         tr = [0, 3]  # so we search only one direction and the inverse
     else:
         tr = range(6)  # This means search in 3 directions + inverse cube
