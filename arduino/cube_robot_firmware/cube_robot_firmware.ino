@@ -23,12 +23,12 @@ static struct IBuff
 
 static const Motor Motors[] = 
 {
-    {10, 0},  // Right
-    {11, 0},  // Left
-    {12, 0},  // Up
-    {13, 0},  // Down
-    {14, 0},  // Front
-    {15, 0}   // Back
+    {2, 22},  // Right
+    {3, 24},  // Left
+    {10, 26},  // Up
+    {5, 28},  // Down
+    {6, 30},  // Front
+    {4, 32}   // Back
 };
 
 static const unsigned int Steps[] = 
@@ -56,23 +56,28 @@ void setup() {
  Serial.begin(BAUD_RATE);
  Serial.flush();
  active_functions = 0;
- for (int i = 0; i < 5; i++)
+ for (int i = 0; i < 6; i++)
  {
      pinMode(Motors[i].step_pin, OUTPUT);
      pinMode(Motors[i].dir_pin, OUTPUT);
+     digitalWrite(Motors[i].step_pin, LOW);
+     digitalWrite(Motors[i].dir_pin, LOW);
  }
 }
 
 //loop through all opcodes
 void loop() {
   // put your main code here, to run repeatedly:
-  OpCodeTranslation(Serial.read(), next_instruction);
-  digitalWrite(next_instruction.motor->dir_pin, next_instruction.dir);
-  for (; next_instruction.steps > 0; --next_instruction.steps)
+  if (Serial.available())
   {
-    delayMicroseconds(100);
-    digitalWrite(next_instruction.motor->step_pin, HIGH);
-    delayMicroseconds(25);
-    digitalWrite(next_instruction.motor->dir_pin, LOW);
+    OpCodeTranslation(Serial.read(), next_instruction);
+    digitalWrite(next_instruction.motor->dir_pin, next_instruction.dir);
+    for (; next_instruction.steps > 0; --next_instruction.steps)
+    {
+        delayMicroseconds(400);
+        digitalWrite(next_instruction.motor->step_pin, HIGH);
+        delayMicroseconds(200);
+        digitalWrite(next_instruction.motor->step_pin, LOW);
+    }
   }
 }
