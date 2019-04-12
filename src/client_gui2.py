@@ -11,7 +11,9 @@ from threading import Thread
 from vision2 import grab_colors
 import vision_params
 import serial
+from serial import serialutil
 import platform
+import codecs
 
 
 import numpy as np
@@ -21,8 +23,8 @@ DEFAULT_HOST = 'localhost'
 DEFAULT_PORT = '8080'
 com_ports = {'Darwin': '/dev/ttyUSB0',
              'Linux': '/dev/ttyUSB0',
-             'Windows': 'COM0'}
-baudrate = 19200
+             'Windows': 'COM6'}
+baudrate = 9600
 os = platform.system()
 
 width = 60  # width of a facelet in pixels
@@ -30,26 +32,69 @@ facelet_id = [[[0 for col in range(3)] for row in range(3)] for fc in range(6)]
 colorpick_id = [0 for i in range(6)]
 curcol = None
 t = ("U", "R", "F", "D", "L", "B")
-cols = ("yellow", "green", "red", "white", "blue", "orange")
+cols = ("white", "red", "green", "yellow", "orange", "blue")
+solution = ''
 
 ########################################################################################################################
 
 # ############################################# Serial functions #######################################################
 
 
-def send_serial(message):
+class nonloc:
+    pass
+
+
+def send_serial():
+    message = decode(nonloc.solution)
+    hexlify = codecs.getencoder('hex')
+    hex_message = hexlify(message.encode())[0]
+    print(message)
+    print(hex_message)
+    display.delete(1.0, END)
     ser = serial.Serial()
     ser.baudrate = baudrate
     ser.port = com_ports[os]
     try:
         ser.open()
         print('Serial connection opened')
-        ser.write(message)
-    except:
+        ser.write(message.encode())
+        show_text('Solution sent')
+    except serialutil.SerialTimeoutException:
+        show_text('Serial timeout')
+    except serialutil.SerialException:
         show_text('Serial connection could not be opened')
+
 
     if ser.is_open:
         ser.close()
+
+
+def decode(solution):
+    decode_dict = {'R1': 'A',
+                   'R3': 'B',
+                   'R2': 'C',
+                   'L1': 'D',
+                   'L3': 'E',
+                   'L2': 'F',
+                   'U1': 'G',
+                   'U3': 'H',
+                   'U2': 'I',
+                   'D1': 'J',
+                   'D3': 'K',
+                   'D2': 'L',
+                   'F1': 'M',
+                   'F3': 'N',
+                   'F2': 'O',
+                   'B1': 'P',
+                   'B3': 'Q',
+                   'B2': 'R'}
+
+    sol_list = solution.split(' ')
+    output = ''
+    del sol_list[-1]
+    for move in sol_list:
+        output += decode_dict[move]
+    return output
 
 ########################################################################################################################
 
@@ -142,9 +187,10 @@ def solve():
     except:
         show_text('Cannot send cube configuration to server.')
         return
-    solution = s.recv(2048).decode()
-    show_text(solution)
-    send_serial(solution)
+
+    nonloc.solution = s.recv(2048).decode()
+    show_text(nonloc.solution)
+    bsend.config(state='normal')
 
 
 ########################################################################################################################
@@ -158,6 +204,7 @@ def clean():
         for row in range(3):
             for col in range(3):
                 canvas.itemconfig(facelet_id[f][row][col], fill=canvas.itemcget(facelet_id[f][1][1], "fill"))
+    bsend.config(state=DISABLED)
 
 
 def empty():
@@ -167,6 +214,7 @@ def empty():
             for col in range(3):
                 if row != 1 or col != 1:
                     canvas.itemconfig(facelet_id[f][row][col], fill="grey")
+    bsend.config(state=DISABLED)
 
 
 def random():
@@ -180,6 +228,7 @@ def random():
             for col in range(3):
                 canvas.itemconfig(facelet_id[f][row][col], fill=cols[fc.f[idx]])
                 idx += 1
+    bsend.config(state=DISABLED)
 
 
 ########################################################################################################################
@@ -269,14 +318,18 @@ root = Tk()
 root.wm_title("Solver Client")
 canvas = Canvas(root, width=12 * width + 20, height=9 * width + 20)
 canvas.pack()
-bsolve = Button(text="Solve", height=2, width=10, relief=RAISED, command=solve)
+
+bsolve = Button(text="Solve", height=1, width=10, relief=RAISED, command=solve)
 bsolve_window = canvas.create_window(10 + 10.5 * width, 10 + 6.5 * width, anchor=NW, window=bsolve)
 bclean = Button(text="Clean", height=1, width=10, relief=RAISED, command=clean)
-bclean_window = canvas.create_window(10 + 10.5 * width, 10 + 7.5 * width, anchor=NW, window=bclean)
+bclean_window = canvas.create_window(10 + 10.5 * width, 10 + 7 * width, anchor=NW, window=bclean)
 bempty = Button(text="Empty", height=1, width=10, relief=RAISED, command=empty)
-bempty_window = canvas.create_window(10 + 10.5 * width, 10 + 8 * width, anchor=NW, window=bempty)
+bempty_window = canvas.create_window(10 + 10.5 * width, 10 + 7.5 * width, anchor=NW, window=bempty)
 brandom = Button(text="Random", height=1, width=10, relief=RAISED, command=random)
-brandom_window = canvas.create_window(10 + 10.5 * width, 10 + 8.5 * width, anchor=NW, window=brandom)
+brandom_window = canvas.create_window(10 + 10.5 * width, 10 + 8 * width, anchor=NW, window=brandom)
+bsend = Button(text='Send', height=1, width=10, relief=RAISED, command=lambda: send_serial(),
+               state=DISABLED)
+bsend_window = canvas.create_window(10 + 10.5 * width, 10 + 8.5 * width, anchor=NW, window=bsend)
 display = Text(height=7, width=39)
 text_window = canvas.create_window(10 + 6.5 * width, 10 + .5 * width, anchor=NW, window=display)
 hp = Label(text='    Hostname and Port')
